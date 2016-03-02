@@ -15,7 +15,7 @@ export default class QuizDetail extends React.Component{
 		return(
 			<div>
 				<div className="text-center">
-					<h4>Title and Due Date&nbsp;<span className="glyphicon glyphicon-exclamation-sign"></span></h4>
+					<h4>Title and Due Date&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
 				</div>
 				<div className="form-group">
 				  <label forHtml="qpTitle" className="fontNormal">

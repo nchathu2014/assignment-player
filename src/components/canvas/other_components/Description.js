@@ -10,7 +10,7 @@ export default class Description extends React.Component{
 		return(
 			<div>
 				<div className="text-center">
-					<h4>Description&nbsp;<span className="glyphicon glyphicon-exclamation-sign"></span></h4>
+					<h4>Description&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
 				</div>
 				<div>
 					<textarea  rows="10" className="form-control" style={{resize:'none'}}></textarea>
