@@ -1,0 +1,109 @@
+html,body{
+	background: #e7e7e7;
+	overflow-x: hidden;
+	overflow-y:auto;
+}
+
+.shadow {
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.view-title{
+	background-color: #666666;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.view-icon-sep{
+    border-right: 1px dotted #cccccc;
+    padding: 13px 10px;
+}
+
+.view-icon-sep:hover{
+	cursor: pointer;
+}
+
+.dash-line{
+    border-bottom: 1px dashed #000000;
+    padding: 12px;
+    background-color
+}
+.dash-horizontal{
+    border-right:1px dashed #000000;
+}
+
+/*Width Change Effects*/
+
+.expandRightDiv{
+    position: absolute;
+    width: 99%;
+    left: 32px;
+    z-index: 99998
+}
+
+.rotate180Deg{
+    transform: rotate(180deg);
+}
+
+/*MenuComponent Styles*/
+.menu-btn{
+    border-radius: 0px;
+    border:none;
+    width: 100%;
+    text-align: left;
+}
+.menu-btn:hover{
+    background-color: green;
+    color:#ffffff;
+    z-index: 99999;
+    position: relative;
+}
+
+.popUpModal{
+    /* Refactor this EBP-CSS*/
+    height: 520px;background-color: #f2f2f2;
+    position: absolute;
+    top:56px;
+    left: 45px;
+    padding: 15px;
+    z-index: 99997;
+    display: none;
+
+    -webkit-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+
+/*Override the Boilerplate styles to pearson standards colors*/
+.btn-primary{
+    background-color: #107ACA
+}
+
+.btn-primary:hover{
+    background-color:#0E6AB0;
+}
+
+
+.star{
+    color:red;
+}
+
+.form-control{
+    font-weight:normal;
+}
+
+.fontNormal{
+    font-weight:normal;
+}
+
+.dropdown-toggle{
+    background-color: white
+}
+
+
+
+
