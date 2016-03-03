@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-export default class AddQuestion extends React.Component{
+export default class StudentSubmission extends Component{
 
 	constructor(props){
 		super(props);
@@ -13,7 +13,7 @@ export default class AddQuestion extends React.Component{
 		return(
 			<div>
 				<div className="text-center">
-					<h4>Add Questions&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
+					<h4>StudentSubmission&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
 				</div>
 				<div>
 					<p style={{fontWeight:'bold',fontStyle:'italic',fontSize:11}}>

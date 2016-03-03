@@ -8,11 +8,10 @@ import MenuItem from './MenuItem';
 import MenuLabel from './MenuLabel';
 
 /*2nd level components*/
-import AddMedia from './other_components/AddMedia';
-import AddQuestion from './other_components/AddQuestion';
-import GradingOptions from './other_components/GradingOptions';
+import InstResources from './other_components/InstResources';
+import StudentSubmission from './other_components/StudentSubmission';
 import Description from './other_components/Description';
-import QuizDetail from './other_components/QuizDetail';
+import AssignmentDetail from './other_components/AssignmentDetail';
 import LearningObjectives from './other_components/LearningObjectives';
 
 
@@ -106,7 +105,7 @@ export default class Canvas extends React.Component{
 
 
         switch(menuItem){
-        	case 1 : render(<QuizDetail/>, 
+        	case 1 : render(<AssignmentDetail/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
@@ -118,17 +117,14 @@ export default class Canvas extends React.Component{
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 4 : render(<AddMedia/>, 
+        	case 4 : render(<InstResources/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 5 : render(<AddQuestion/>, 
+        	case 5 : render(<StudentSubmission/>, 
         			 document.getElementById('popupContainer'));
         			 break;
         			 
-        	case 6 : render(<GradingOptions/>, 
-        			 document.getElementById('popupContainer'));
-        			 break;
 
         }
 	}

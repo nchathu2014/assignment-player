@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-export default class AddMedia extends React.Component{
+export default class InstResources extends Component{
 
 	constructor(props){
 		super(props);		 
@@ -9,7 +9,7 @@ export default class AddMedia extends React.Component{
 	render(){
 		return(
 			<div>
-				<h3>Add Media Component</h3>
+				<h3>InstResources</h3>
 				(Dependency with Dahara)
 			</div>
 		);

@@ -1,16 +1,33 @@
-import React from 'react';
+import React,{Component} from 'react';
+import ReactDOM from 'react-dom';
+import PopOver from '../PopOver'
+import {OverlayTrigger,ButtonToolbar,Button,Popover,tooltip} from 'react-bootstrap';
 
-export default class Description extends React.Component{
+
+
+export default class Description extends Component{
 
 	constructor(props){
-		super(props);		 
+		super(props);	
+
+		
+		 
 	}
 
+_renderToolTip(){
+	
+}
+
+
 	render(){
+
+		
+		
 		return(
 			<div>
-				<div className="text-center">
-					<h4>Description&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
+			    
+				<div className="text-center" id="test">
+					<PopOver  heading="Description"  icon="glyphicon glyphicon-info-sign"/>
 				</div>
 				<div>
 					<textarea  rows="10" className="form-control" style={{resize:'none'}}></textarea>
@@ -22,6 +39,8 @@ export default class Description extends React.Component{
 			</div>
 		);
 	}
+
+
 }
 
 
