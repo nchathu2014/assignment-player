@@ -1,9 +1,5 @@
 import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
-import PopOver from '../PopOver'
-import {OverlayTrigger,ButtonToolbar,Button,Popover,tooltip} from 'react-bootstrap';
-
-
+import PopOver from '../PopOver';
 
 export default class Description extends Component{
 

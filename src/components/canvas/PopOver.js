@@ -12,10 +12,10 @@ class PopOver extends Component{
 		return(
 			<div>
 
-			
+
 
 				<h4>
-					{this.props.heading}&nbsp;&nbsp;
+					{this.props.heading}&nbsp;
 					<span className={this.props.icon}
 						  onClick={this._popOver.bind(this)}></span>
 					
