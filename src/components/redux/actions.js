@@ -10,6 +10,21 @@ let actions ={
 			dueDate:dueDate
 		}
 		
+	},
+
+	saveLearningObjectives:function(learningObj){
+		alert("saveLearningObjectives-->"+learningObj)
+		return{
+			type:'SAVE_LEARNING_OBJECTIVES',
+			learningObj:learningObj
+		}
+	},
+	saveDescription:function(desc){
+		alert("saveDescription-->"+desc)
+		return{
+			type:'SAVE_DESCRIPTION',
+			desc:desc
+		}
 	}
 
 }

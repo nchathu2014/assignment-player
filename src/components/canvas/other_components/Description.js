@@ -10,9 +10,10 @@ export default class Description extends Component{
 		 
 	}
 
-_renderToolTip(){
-	
-}
+
+   _saveDescription(){
+   		this.props.actions.saveDescription(this.refs.descRef.value);
+   }
 
 
 	render(){
@@ -26,11 +27,16 @@ _renderToolTip(){
 					<PopOver  heading="Description"  icon="glyphicon glyphicon-info-sign"/>
 				</div>
 				<div>
-					<textarea  rows="10" className="form-control" style={{resize:'none'}}></textarea>
+					<textarea   rows="10" 
+								className="form-control" 
+								style={{resize:'none'}}
+								ref="descRef">
+					</textarea>
 				</div>
 				<div>&nbsp;</div>
 				<div>
-					<button className="btn btn-primary pull-right">Save</button>
+					<button className="btn btn-primary pull-right"
+							onClick={this._saveDescription.bind(this)}>Save</button>
 				</div>
 			</div>
 		);

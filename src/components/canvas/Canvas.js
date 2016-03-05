@@ -113,11 +113,11 @@ class Canvas extends Component{
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 2 : render(<LearningObjectives/>, 
+        	case 2 : render(<LearningObjectives actions={this.props.actions}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
         			 
-        	case 3 : render(<Description/>, 
+        	case 3 : render(<Description actions={this.props.actions}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 

@@ -6,6 +6,10 @@ export default class LearningObjectives extends React.Component{
 		super(props);		 
 	}
 
+	_saveLearningObjectives(){
+		this.props.actions.saveLearningObjectives(this.refs.learningObjRef.value)
+	}
+
 	render(){
 
 		var btnDrop={
@@ -22,7 +26,12 @@ export default class LearningObjectives extends React.Component{
 					<h4>Learning Objectives&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
 				</div>
 				<div>
-					<textarea  rows="10" className="form-control" style={{resize:'none'}}></textarea>
+					<textarea  rows="10" 
+							   className="form-control" 
+							   style={{resize:'none'}}
+							   ref="learningObjRef"
+							   >
+				    </textarea>
 					
 					 {/*
 
@@ -50,7 +59,8 @@ export default class LearningObjectives extends React.Component{
 				</div>
 				
 				<div style={{marginTop:10}}>
-					<button className="btn btn-primary pull-right">Save</button>
+					<button className="btn btn-primary pull-right" 
+							onClick={this._saveLearningObjectives.bind(this)}>Save</button>
 				</div>
 			</div>
 		);
