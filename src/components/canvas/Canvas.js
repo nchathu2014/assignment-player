@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {render} from 'react-dom';
 import Header from './Header';
 import View from './View';
@@ -7,16 +7,20 @@ import Menu from './Menu';
 import MenuItem from './MenuItem';
 import MenuLabel from './MenuLabel';
 
+/*redux dependencies*/
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import actions from '../redux/actions';
+
 /*2nd level components*/
 import InstResources from './other_components/InstResources';
 import StudentSubmission from './other_components/StudentSubmission';
 import Description from './other_components/Description';
-import AssignmentDetail from './other_components/AssignmentDetail';
+import TitleAndDueDate from './other_components/TitleAndDueDate';
 import LearningObjectives from './other_components/LearningObjectives';
 
 
-
-export default class Canvas extends React.Component{
+class Canvas extends Component{
 
 	constructor(props){
 		super(props);	    
@@ -105,7 +109,7 @@ export default class Canvas extends React.Component{
 
 
         switch(menuItem){
-        	case 1 : render(<AssignmentDetail/>, 
+        	case 1 : render(<TitleAndDueDate actions={this.props.actions}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
@@ -130,6 +134,18 @@ export default class Canvas extends React.Component{
 	}
 
 }
+
+function mapToProps(state){
+	return state;   //state.todos
+}
+
+function mapDispatchToProps(dispatch){
+	return {
+		actions:bindActionCreators(actions,dispatch)
+	}
+}
+
+export default connect(mapToProps,mapDispatchToProps)(Canvas)
 
 
 
