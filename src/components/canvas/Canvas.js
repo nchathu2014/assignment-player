@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{Component} from 'react';
 import {render} from 'react-dom';
 import Header from './Header';
 import View from './View';
@@ -7,17 +7,20 @@ import Menu from './Menu';
 import MenuItem from './MenuItem';
 import MenuLabel from './MenuLabel';
 
+/*redux dependencies*/
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import actions from '../redux/actions';
+
 /*2nd level components*/
-import AddMedia from './other_components/AddMedia';
-import AddQuestion from './other_components/AddQuestion';
-import GradingOptions from './other_components/GradingOptions';
+import InstResources from './other_components/InstResources';
+import StudentSubmission from './other_components/StudentSubmission';
 import Description from './other_components/Description';
-import QuizDetail from './other_components/QuizDetail';
+import TitleAndDueDate from './other_components/TitleAndDueDate';
 import LearningObjectives from './other_components/LearningObjectives';
 
 
-
-export default class Canvas extends React.Component{
+class Canvas extends Component{
 
 	constructor(props){
 		super(props);	    
@@ -106,7 +109,7 @@ export default class Canvas extends React.Component{
 
 
         switch(menuItem){
-        	case 1 : render(<QuizDetail/>, 
+        	case 1 : render(<TitleAndDueDate actions={this.props.actions}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
@@ -118,22 +121,31 @@ export default class Canvas extends React.Component{
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 4 : render(<AddMedia/>, 
+        	case 4 : render(<InstResources/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 5 : render(<AddQuestion/>, 
+        	case 5 : render(<StudentSubmission/>, 
         			 document.getElementById('popupContainer'));
         			 break;
         			 
-        	case 6 : render(<GradingOptions/>, 
-        			 document.getElementById('popupContainer'));
-        			 break;
 
         }
 	}
 
 }
+
+function mapToProps(state){
+	return state;   //state.todos
+}
+
+function mapDispatchToProps(dispatch){
+	return {
+		actions:bindActionCreators(actions,dispatch)
+	}
+}
+
+export default connect(mapToProps,mapDispatchToProps)(Canvas)
 
 
 

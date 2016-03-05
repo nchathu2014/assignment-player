@@ -1,9 +1,14 @@
-import React from 'react';
+import React,{Component} from 'react';
+import PopOver from '../PopOver';
 
-export default class QuizDetail extends React.Component{
+export default class TitleAndDueDate extends Component{
 
 	constructor(props){
 		super(props);		 
+	}
+
+	_saveTitleAndDueDate(){
+		this.props.actions.saveTitleAndDueDate(this.refs.qpTitle.value,"123")
 	}
 
 	render(){
@@ -15,16 +20,17 @@ export default class QuizDetail extends React.Component{
 		return(
 			<div>
 				<div className="text-center">
-					<h4>Title and Due Date&nbsp;<span className="glyphicon glyphicon-info-sign"></span></h4>
+				<PopOver  heading="Title and Due Date"  icon="glyphicon glyphicon-info-sign"/>
+					
 				</div>
 				<div className="form-group">
 				  <label forHtml="qpTitle" className="fontNormal">
 				  	Title<span className="star">*</span>
 				  </label>
-				  <input type="text" className="form-control" id="qpTitle"/>
+				  <input type="text" className="form-control" ref="qpTitle" id="qpTitle"/>
 				</div>
 				<div className="form-group">
-				  <label forHtml="qpDueDate" className="fontNormal">
+				  <label forHtml="qpDueDate" className="fontNormal" ref="qpDueDate" id="qpDueDate">
 				  	Due date<span className="star">*</span>
 				  </label>
 
@@ -44,7 +50,8 @@ export default class QuizDetail extends React.Component{
         		</div>
 			</div>
 				<div>
-					<button className="btn btn-primary pull-right">Save</button>
+					<button className="btn btn-primary pull-right" 
+					        onClick={this._saveTitleAndDueDate.bind(this)}>Save</button>
 				</div>
 			</div>
 		);

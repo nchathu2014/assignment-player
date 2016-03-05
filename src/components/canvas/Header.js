@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-export default class Header extends React.Component{
+export default class Header extends Component{
 
 	constructor(props){
 		super(props);		 
@@ -14,18 +14,16 @@ export default class Header extends React.Component{
 				</div>
 				<div className="col-lg-9 col-md-9">
 					<span className="pull-right" style={{paddingTop:10,paddingRight:50}}>
-						<button className="btn btn-primary" onClick={this._publishHandle.bind(this)}>Publish</button>
+						<button className="btn btn-primary" onClick={this._saveDraft.bind(this)}>Save as Draft</button>
 					</span>
 				</div>
 			</div>
 		);
 	}
 
-	_saveExitHandle(){
-		console.log("_saveExitHandle");
-	}
+	
 
-	_publishHandle(){
+	_saveDraft(){
 		console.log("_publishHandle");
 	}
 

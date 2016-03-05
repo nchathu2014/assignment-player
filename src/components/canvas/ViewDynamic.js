@@ -1,6 +1,6 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-export default class ViewDynamic extends React.Component{
+export default class ViewDynamic extends Component{
 
 	constructor(props){
 		super(props);		 
