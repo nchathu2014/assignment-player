@@ -10,6 +10,12 @@ export default class LearningObjectives extends React.Component{
 		this.props.actions.saveLearningObjectives(this.refs.learningObjRef.value)
 	}
 
+	_onChange(event){
+		let changedText = event.target.value;
+		this.props.actions.onChangeLearningObjectives(changedText)
+		console.log(event.target.value)
+	}
+
 	render(){
 
 		var btnDrop={
@@ -30,7 +36,8 @@ export default class LearningObjectives extends React.Component{
 							   className="form-control" 
 							   style={{resize:'none'}}
 							   ref="learningObjRef"
-							   >
+							   defaultValue={this.props.learningObjectivesObj.text}
+							   onChange={this._onChange.bind(this)}>
 				    </textarea>
 					
 					 {/*

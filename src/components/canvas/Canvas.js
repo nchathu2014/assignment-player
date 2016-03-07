@@ -75,7 +75,9 @@ class Canvas extends Component{
 					<div className="col-lg-9 col-md-9 rightDiv">
 						<div className="row">
 							<div className="col-lg-12 col-md-12">
-								<View/>
+								<View learningObjectivesObj={this.props.learningObjectivesObj}
+								      descriptionObj={this.props.descriptionObj}
+								      titleDueDateObj={this.props.titleDueDateObj}/>
 							</div>	
 						</div>					
 					</div>
@@ -93,9 +95,11 @@ class Canvas extends Component{
 	_popUpClose(){
 
         $(".popUpModal").show().hide("slide", {direction: "right" }, 300 );//slide animated to popup dialog
+	
 	}
 
 	_menuItemOnClick(menuItem){
+		
 		$('.rightDiv').removeClass('expandRightDiv');//make the rightSide div to initial width
         $('.viewIcon').removeClass('rotate180Deg');//reset icon into initial state (0 deg)
         $(".popUpModal").css("width",$('.menu-btn').width()+10+'px'); //make the popup window width relative to menu item width
@@ -109,15 +113,18 @@ class Canvas extends Component{
 
 
         switch(menuItem){
-        	case 1 : render(<TitleAndDueDate actions={this.props.actions}/>, 
+        	case 1 : render(<TitleAndDueDate actions={this.props.actions}
+        									 titleDueDateObj={this.props.titleDueDateObj}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 2 : render(<LearningObjectives actions={this.props.actions}/>, 
+        	case 2 : render(<LearningObjectives actions={this.props.actions}
+        										learningObjectivesObj={this.props.learningObjectivesObj}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
         			 
-        	case 3 : render(<Description actions={this.props.actions}/>, 
+        	case 3 : render(<Description actions={this.props.actions}
+        								 descriptionObj={this.props.descriptionObj}/>, 
         			 document.getElementById('popupContainer'));
         			 break;
 
@@ -125,9 +132,10 @@ class Canvas extends Component{
         			 document.getElementById('popupContainer'));
         			 break;
 
-        	case 5 : render(<StudentSubmission/>, 
+        	case 5 : render(<StudentSubmission  actions={this.props.actions}
+        										studentSubmissionObj={this.props.studentSubmissionObj}/>, 
         			 document.getElementById('popupContainer'));
-        			 break;
+        			
         			 
 
         }

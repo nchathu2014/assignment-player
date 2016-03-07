@@ -64,7 +64,8 @@ html,body{
 
 .popUpModal{
     /* Refactor this EBP-CSS*/
-    height: 520px;background-color: #f2f2f2;
+    height: auto;background-color: #f2f2f2;
+    min-height: 550px;
     position: absolute;
     top:56px;
     left: 45px;
@@ -100,8 +101,17 @@ html,body{
     font-weight:normal;
 }
 
+label{
+    font-weight:normal;
+}
+
 .dropdown-toggle{
     background-color: white
+}
+
+
+.cusBorderBottom:{
+   color:'red';
 }
 
 

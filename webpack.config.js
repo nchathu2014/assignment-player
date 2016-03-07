@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 module.exports =  {
 
 	entry:"./src/main.js",
@@ -6,6 +7,11 @@ module.exports =  {
 		filename:"assignment_player.js",
 		publicPath:"/"
 	},
+	plugins: [
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
 	devServer:{
 		inline:true,
 		contentBase:'./dist',

@@ -20,7 +20,7 @@ export default class ViewTitle extends Component{
 				<div className="dash-line">
                         <div className="row">
                             <div className="col-lg-8 col-md-6 dash-horizontal" style={{wordWrap: 'break-word'}}>
-                                <b>Title</b>:
+                                <b>Title</b>:&nbsp;{this.props.titleDueDateObj.title}
                             </div>
                             
                             <div className="col-lg-4 col-md-4">
@@ -28,20 +28,31 @@ export default class ViewTitle extends Component{
                             </div>
                         </div>
                     </div>
-                    <div  className="dash-line">
+
+                    {this.props.learningObjectivesObj.text.length>0 && 
+
+                        <div  className="dash-line">
                         <div className="row">
                             <div className="col-lg-12 col-md-12">
-                                <b> Learning Objective :</b>
+                                <b> Learning Objective </b>:&nbsp;{this.props.learningObjectivesObj.text}
+
                             </div>
                         </div>
                     </div>
-                    <div  className="dash-line">
-                        <div className="row">
-                            <div className="col-lg-12 col-md-12">
-                                <b>Description :</b>
-                            </div>
-                        </div>
-                    </div>
+                    }
+
+                    {this.props.descriptionObj.text.length>0  && 
+                           <div  className="dash-line">
+                                <div className="row">
+                                    <div className="col-lg-12 col-md-12">
+                                    
+                                        <b>Description :</b> {this.props.descriptionObj.text}
+                                    </div>
+                                </div>
+                            </div> 
+                    }
+
+                    
 			</div>
 		);
 	}

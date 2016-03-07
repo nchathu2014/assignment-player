@@ -8,8 +8,14 @@ export default class TitleAndDueDate extends Component{
 	}
 
 	_saveTitleAndDueDate(){
-		this.props.actions.saveTitleAndDueDate(this.refs.qpTitle.value,"123")
+		this.props.actions.saveTitleAndDueDate(this.refs.qpTitle.value,this.refs.qpDueDate.value)
 	}
+
+	_onChange(event){
+   	let changedText = event.target.value;
+		this.props.actions.onChangeTitle(changedText)
+		console.log(event.target.value)
+    }
 
 	render(){
 
@@ -23,10 +29,15 @@ export default class TitleAndDueDate extends Component{
 				  <label forHtml="qpTitle" className="fontNormal">
 				  	Title<span className="star">*</span>
 				  </label>
-				  <input type="text" className="form-control" ref="qpTitle" id="qpTitle"/>
+				  <input type="text" 
+				  		 className="form-control" 
+				  		 ref="qpTitle" 
+				  		 id="qpTitle"
+				  		 defaultValue={this.props.titleDueDateObj.title}
+					     onChange={this._onChange.bind(this)}/>
 				</div>
 				<div className="form-group">
-				  <label forHtml="qpDueDate" className="fontNormal" ref="qpDueDate" id="qpDueDate">
+				  <label forHtml="qpDueDate" className="fontNormal">
 				  	Due date<span className="star">*</span>
 				  </label>
 
@@ -34,8 +45,14 @@ export default class TitleAndDueDate extends Component{
 				<div className="row">
         			<div className='col-lg-10'>
         			<div className="form-group">
-        				<div className='input-group date' id='datetimepicker1' onClick={this._openDatepicker.bind(this)}>
-		                <input type='text' className="form-control" style={{borderRight:'none'}}/>
+        				<div className='input-group date' 
+        				     id='datetimepicker1' 
+        				     onClick={this._openDatepicker.bind(this)}>
+		                <input type='text' 
+		                	   className="form-control" 
+		                	   style={{borderRight:'none'}}
+		                	   ref="qpDueDate" 
+		                	   id="qpDueDate"/>
 		                <span className="input-group-addon" style={{backgroundColor:'white'}}>
 		                	<span className="glyphicon glyphicon-calendar">
 		                	</span>

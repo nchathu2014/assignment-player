@@ -21,7 +21,11 @@ export default class View extends Component{
 						</div>
 					</div>
 					<div className="col-lg-12 col-md-12" style={{padding:'5px 20px 20px 30px'}}>
-						<ViewTitle/>
+						<ViewTitle learningObjectivesObj={this.props.learningObjectivesObj}
+								   descriptionObj={this.props.descriptionObj}
+								   titleDueDateObj={this.props.titleDueDateObj}/>
+
+								   
 						<ViewDynamic/>
 				    </div>
 			    </div>	

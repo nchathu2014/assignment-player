@@ -6,18 +6,36 @@ import {Provider} from 'react-redux';
 
 let initialState={
 
-	userList:[
-		/*{
-			id:0,
-			avatar:'https://avatars.githubusercontent.com/u/9334623?v=3',
-			userName:'nchathu2014'
-		},
-		{
-			id:1,
-			avatar:'https://avatars.githubusercontent.com/u/9334623?v=3',
-			userName:'DON'
-		}*/
-	]
+	utilityObj:{
+		styleEnable:false
+	},
+	titleDueDateObj:{
+		title:"",
+		date:""
+	},
+	learningObjectivesObj:{
+		text:""
+	},
+	descriptionObj:{
+		text:""		
+	},
+	studentSubmissionObj:{
+		checkedVideo:false,
+		checkedRequiredVideo:false,
+		disabledVideo:"disabled",
+
+		checkedAudio:false,
+		checkedRequiredAudio:false,
+		disabledAudio:"disabled",
+
+		checkedImage:false,
+		checkedRequiredImage:false,
+		disabledImage:"disabled",
+
+		checkedDocument:false,
+		checkedRequiredDocument:false,
+		disabledDocument:"disabled"
+	}
 };
 
 let store = configureStore(initialState);
